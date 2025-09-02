@@ -8,8 +8,9 @@ export default {
   basePath: isProd ? `/${repo}` : '',
   assetPrefix: isProd ? `/${repo}/` : '',
   images: { unoptimized: true },
-
-  // keep from your original config to prevent build failures
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? `/${repo}` : ''
+  }
 };
